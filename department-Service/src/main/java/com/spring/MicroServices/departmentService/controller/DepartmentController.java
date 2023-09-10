@@ -19,13 +19,13 @@ public class DepartmentController {
         return new ResponseEntity<>(savedDto, HttpStatus.CREATED);
     }
 
-    @GetMapping("/get/{id}")
+    @GetMapping("/id/{id}")
     public ResponseEntity<DepartmentDto> getDepartmentById(@PathVariable Long id) {
         DepartmentDto fetchedDepartment = departmentService.getDepartmentById(id);
         return new ResponseEntity<>(fetchedDepartment, HttpStatus.FOUND);
     }
 
-    @GetMapping("{dept-code}")
+    @GetMapping("/deptCode/{dept-code}")
     public ResponseEntity<DepartmentDto> getDepartmentByCode(@PathVariable("dept-code") String departmentCode) {
         DepartmentDto fetchedDepartment = departmentService.getDepartmentByCode(departmentCode);
         return new ResponseEntity<>(fetchedDepartment, HttpStatus.FOUND);
