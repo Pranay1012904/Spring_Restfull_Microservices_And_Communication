@@ -7,11 +7,12 @@ import javax.validation.constraints.NotEmpty;
 
 @NoArgsConstructor
 public class EmployeeDto {
-    public EmployeeDto(Long id, String fName, String lName, String email) {
+    public EmployeeDto(Long id, String fName, String lName, String email, String departmentCode) {
         this.id = id;
         this.fName = fName;
         this.lName = lName;
         this.email = email;
+        this.departmentCode=departmentCode;
     }
 
     private Long id;
@@ -22,6 +23,8 @@ public class EmployeeDto {
     @NotEmpty(message="Email Cannot Be Null/Empty")
     @Email(message="Invalid Email Provided")
     private String email;
+    @NotEmpty(message="Department Code can't be Null/Empty")
+    String departmentCode;
 
     public Long getId() {
         return id;
@@ -53,5 +56,13 @@ public class EmployeeDto {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getDepartmentCode() {
+        return departmentCode;
+    }
+
+    public void setDepartmentCode(String departmentCode) {
+        this.departmentCode = departmentCode;
     }
 }

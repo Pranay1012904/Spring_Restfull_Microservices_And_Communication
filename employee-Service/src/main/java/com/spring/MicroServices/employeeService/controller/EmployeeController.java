@@ -1,5 +1,6 @@
 package com.spring.MicroServices.employeeService.controller;
 
+import com.spring.MicroServices.employeeService.dto.ApiResponseDto;
 import com.spring.MicroServices.employeeService.dto.EmployeeDto;
 import com.spring.MicroServices.employeeService.exception.EmailExistsException;
 import com.spring.MicroServices.employeeService.exception.ErrorDetail;
@@ -26,8 +27,8 @@ public class EmployeeController {
     }
 
     @GetMapping("/api/id/{id}")
-    public ResponseEntity<EmployeeDto> getEmpById(@PathVariable Long id){
-            EmployeeDto fetchedEmp=employeeService.getEmpById(id);
+    public ResponseEntity<ApiResponseDto> getEmpById(@PathVariable Long id){
+            ApiResponseDto fetchedEmp=employeeService.getEmpById(id);
         return new ResponseEntity<>(fetchedEmp, HttpStatus.FOUND);
     }
 
