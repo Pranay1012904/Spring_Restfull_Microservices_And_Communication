@@ -2,6 +2,9 @@ package com.spring.MicroServices.employeeService.dto;
 
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+
 @NoArgsConstructor
 public class EmployeeDto {
     public EmployeeDto(Long id, String fName, String lName, String email) {
@@ -12,8 +15,12 @@ public class EmployeeDto {
     }
 
     private Long id;
+    @NotEmpty(message="First Name Cannot Be Null/Empty")
     private String fName;
+    @NotEmpty(message="Last Name Cannot Be Null/Empty")
     private String lName;
+    @NotEmpty(message="Email Cannot Be Null/Empty")
+    @Email(message="Invalid Email Provided")
     private String email;
 
     public Long getId() {
