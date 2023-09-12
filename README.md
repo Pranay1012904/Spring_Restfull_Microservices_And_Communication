@@ -4,7 +4,7 @@
 -Routing(Auto/Manual)</br>
 -Microservices and Communication(Synchrounous)
 
-#PORTS
+# PORTS
 -API GATEWAY : 9091 </br>
 -Service Registry and Discover : 8761 </br>
 -Department-Service :8080 </br>
