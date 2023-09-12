@@ -17,16 +17,16 @@ import java.time.LocalDateTime;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/employee")
+@RequestMapping("/api/employee")
 public class EmployeeController {
     EmployeeService employeeService;
-    @PostMapping("/api/create")
+    @PostMapping("/create")
     public ResponseEntity<EmployeeDto> createEmp(@RequestBody @Valid EmployeeDto employeeDto){
         EmployeeDto savedEmp=employeeService.createEmp(employeeDto);
         return new ResponseEntity<>(savedEmp, HttpStatus.CREATED);
     }
 
-    @GetMapping("/api/id/{id}")
+    @GetMapping("/id/{id}")
     public ResponseEntity<ApiResponseDto> getEmpById(@PathVariable Long id){
             ApiResponseDto fetchedEmp=employeeService.getEmpById(id);
         return new ResponseEntity<>(fetchedEmp, HttpStatus.FOUND);

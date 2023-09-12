@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Service_Registry" />
+        <module name="api-gateway" />
         <module name="department-Service" />
         <module name="employee-Service" />
       </profile>
@@ -20,6 +21,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Service_Registry" options="-parameters" />
       <module name="Service_Registry_And_DIscovery" options="-parameters" />
+      <module name="api-gateway" options="-parameters" />
       <module name="demo" options="-parameters" />
       <module name="department-Service" options="-parameters" />
       <module name="employee-Service" options="-parameters" />
